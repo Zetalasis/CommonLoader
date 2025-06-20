@@ -22,10 +22,14 @@ public class CommonModLoader {
     private static final HashSet<ICommonMod> MODLIST = new HashSet<>();
     private static final Gson GSON = new Gson();
 
-    public static void bootstrap() {
+    public static void bootstrap(Path path) {
         try {
-            Path executingPath = Path.of(CommonModLoader.class.getProtectionDomain()
-                    .getCodeSource().getLocation().toURI()).getParent();
+            Path executingPath = path;
+
+            if (executingPath == null)
+                executingPath = Path.of(CommonModLoader.class.getProtectionDomain()
+                        .getCodeSource().getLocation().toURI()).getParent();
+
             Path modsFolder;
 
             if (executingPath.endsWith("mods"))

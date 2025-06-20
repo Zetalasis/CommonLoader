@@ -1,8 +1,9 @@
 package com.zetalasis.commonloader;
 
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.loading.FMLPaths;
 
-@Mod(Constants.MOD_ID)
+@Mod(CommonLoader.MOD_ID)
 public class CommonLoaderForge {
     
     public CommonLoaderForge() {
@@ -13,6 +14,6 @@ public class CommonLoaderForge {
     
         // Use Forge to bootstrap the Common mod.
         CommonLoader.LOGGER.info("Hello Forge world!");
-        CommonLoader.init();
+        CommonLoader.init(FMLPaths.MODSDIR.get());
     }
 }

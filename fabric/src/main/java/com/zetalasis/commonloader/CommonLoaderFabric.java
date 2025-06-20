@@ -13,6 +13,6 @@ public class CommonLoaderFabric implements ModInitializer {
 
         // Use Fabric to bootstrap the Common mod.
         CommonLoader.LOGGER.info("Hello Fabric world!");
-        CommonLoader.init();
+        CommonLoader.init(null);
     }
 }
